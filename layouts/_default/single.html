@@ -51,6 +51,19 @@
       {{ end }}
       {{ .Content }}
     </div>
+    {{ if eq .Title "About"}}  
+    		{{- with .Site.Params.social }}
+			<div>
+				{{ partial "social-icons.html" . }}
+			</div>
+		{{- end}}
+		<br><br>
+		<sub><i>
+				<span>Site powered by <a href="https://gohugo.io" target="_blank" rel="noopener">Hugo</a>, </span>
+    <span> <a href="https://github.com/panr/hugo-theme-hello-friend" target="_blank" rel="noopener">"Hello friend"</a> theme created by <a href="https://twitter.com/panr" target="_blank" rel="noopener">panr</a></span>
+</i></sub>
+
+	{{ end }}
     {{ if eq .Type $.Site.Params.contentTypeName }}
       {{ if or .NextInSection .PrevInSection }}
         <div class="pagination">
